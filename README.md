@@ -1,6 +1,6 @@
 # Awesome-Generative-AI-Media-APIS
 
-# Top Generative AI Media API Ecosystem
+## Top Generative AI Media API Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Self-Hosted Inference Gateways, OpenAI-Compatible Endpoints & Multi-Model Orchestration*  
