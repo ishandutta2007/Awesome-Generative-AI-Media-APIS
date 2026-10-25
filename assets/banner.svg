@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b19"/>
+      <stop offset="45%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#181335"/>
+    </linearGradient>
+
+    <!-- Radial Glows -->
+    <radialGradient id="glowTopLeft" cx="15%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowTopRight" cx="85%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowCenter" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Title Gradients -->
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="35%" stop-color="#818cf8"/>
+      <stop offset="70%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <linearGradient id="badgeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#6366f1" stroke-width="0.8" stroke-opacity="0.09"/>
+      <circle cx="40" cy="40" r="1" fill="#38bdf8" fill-opacity="0.25"/>
+    </pattern>
+
+    <!-- Dynamic Animations -->
+    <style>
+      @keyframes floatSlow1 {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(1deg); }
+      }
+      @keyframes floatSlow2 {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(14px) rotate(-1.5deg); }
+      }
+      @keyframes floatSlow3 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.55; transform: scale(1); }
+        50% { opacity: 0.95; transform: scale(1.04); }
+      }
+      @keyframes dashFlow {
+        to { stroke-dashoffset: -120; }
+      }
+      @keyframes pulseRing {
+        0% { r: 16px; opacity: 0.8; }
+        50% { r: 24px; opacity: 0.2; }
+        100% { r: 16px; opacity: 0.8; }
+      }
+
+      .anim-float1 { animation: floatSlow1 7s ease-in-out infinite; }
+      .anim-float2 { animation: floatSlow2 8.5s ease-in-out infinite; }
+      .anim-float3 { animation: floatSlow3 6.5s ease-in-out infinite; }
+      .anim-pulse { transform-origin: center; animation: pulseGlow 4.5s ease-in-out infinite; }
+      .anim-stream { stroke-dasharray: 8 6; animation: dashFlow 14s linear infinite; }
+      .anim-ring { animation: pulseRing 3.5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- 1. Background Layers -->
+  <rect width="1200" height="420" fill="url(#bgGradient)"/>
+  <rect width="1200" height="420" fill="url(#glowTopLeft)"/>
+  <rect width="1200" height="420" fill="url(#glowTopRight)"/>
+  <rect width="1200" height="420" fill="url(#glowCenter)"/>
+  <rect width="1200" height="420" fill="url(#grid)"/>
+
+  <!-- 2. Dynamic Pipeline Stream Lines (Background Animation) -->
+  <g class="anim-stream" opacity="0.65">
+    <!-- Top-left to bottom-right pipeline -->
+    <path d="M 60,90 C 220,90 280,180 440,180 S 660,110 820,110 S 1020,70 1140,70" fill="none" stroke="#38bdf8" stroke-width="1.8"/>
+    <!-- Bottom-left to top-right pipeline -->
+    <path d="M 60,330 C 240,330 320,250 500,250 S 760,320 960,320 S 1080,260 1140,260" fill="none" stroke="#c084fc" stroke-width="1.8"/>
+    <!-- Center connecting crossline -->
+    <path d="M 120,200 C 260,200 360,90 580,90 S 840,330 1080,210" fill="none" stroke="#f472b6" stroke-width="1.5" opacity="0.45"/>
+  </g>
+
+  <!-- 3. Dynamic Animated Network Nodes & Media Badges (Middle Layer) -->
+  <!-- Floating Pill 1: Image Gen (Top Left) -->
+  <g class="anim-float1" transform="translate(100, 52)">
+    <rect width="170" height="38" rx="19" fill="#0f172a" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="20" cy="19" r="6" fill="#38bdf8" class="anim-pulse"/>
+    <text x="34" y="24" fill="#e0f2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">🎨 Text-to-Image</text>
+  </g>
+
+  <!-- Floating Pill 2: Video Gen (Top Right) -->
+  <g class="anim-float2" transform="translate(930, 48)">
+    <rect width="170" height="38" rx="19" fill="#0f172a" fill-opacity="0.85" stroke="#ec4899" stroke-width="1.2"/>
+    <circle cx="20" cy="19" r="6" fill="#ec4899" class="anim-pulse"/>
+    <text x="34" y="24" fill="#fce7f3" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">🎬 Video Synthesis</text>
+  </g>
+
+  <!-- Floating Pill 3: Speech / TTS (Bottom Left) -->
+  <g class="anim-float2" transform="translate(110, 332)">
+    <rect width="180" height="38" rx="19" fill="#0f172a" fill-opacity="0.85" stroke="#818cf8" stroke-width="1.2"/>
+    <circle cx="20" cy="19" r="6" fill="#818cf8" class="anim-pulse"/>
+    <text x="34" y="24" fill="#ede9fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">🎙️ Speech &amp; Audio</text>
+  </g>
+
+  <!-- Floating Pill 4: OpenAI Compatible (Bottom Right) -->
+  <g class="anim-float1" transform="translate(900, 336)">
+    <rect width="195" height="38" rx="19" fill="#0f172a" fill-opacity="0.85" stroke="#34d399" stroke-width="1.2"/>
+    <circle cx="20" cy="19" r="6" fill="#34d399" class="anim-pulse"/>
+    <text x="34" y="24" fill="#d1fae5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">⚡ OpenAI-Compatible</text>
+  </g>
+
+  <!-- Floating Pill 5: Self-Hosted GPU (Center-ish offset) -->
+  <g class="anim-float3" transform="translate(500, 42)">
+    <rect width="200" height="34" rx="17" fill="#0f172a" fill-opacity="0.8" stroke="#a78bfa" stroke-width="1.1"/>
+    <circle cx="18" cy="17" r="5" fill="#a78bfa"/>
+    <text x="32" y="22" fill="#ede9fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600">🖥️ Self-Hosted Gateway</text>
+  </g>
+
+  <!-- 4. Main Foreground Backdrop Card (Ensures title & subtitle are 100% visible and in foreground) -->
+  <g transform="translate(180, 105)">
+    <!-- Backdrop Card with blurred/dark backdrop -->
+    <rect width="840" height="210" rx="20" fill="#090d1c" fill-opacity="0.88" stroke="url(#badgeBorder)" stroke-width="1.5"/>
+
+    <!-- Subtle Inner Header Accent -->
+    <path d="M 0 20 C 0 8.954 8.954 0 20 0 L 820 0 C 831.046 0 840 8.954 840 20 L 840 24 L 0 24 Z" fill="url(#titleGradient)" fill-opacity="0.25"/>
+
+    <!-- Top Meta Tag -->
+    <g transform="translate(305, 20)">
+      <rect width="230" height="24" rx="12" fill="#1e1b4b" stroke="#818cf8" stroke-width="1" stroke-opacity="0.6"/>
+      <text x="115" y="16" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">CURATED ECOSYSTEM DIRECTORY</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="420" y="94" text-anchor="middle" fill="url(#titleGradient)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-0.5">Awesome Generative AI Media APIs</text>
+
+    <!-- Subtitle -->
+    <text x="420" y="132" text-anchor="middle" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="500">
+      Self-Hosted Inference Gateways • OpenAI-Compatible Endpoints • Multi-Modal Model Orchestration
+    </text>
+
+    <!-- Bottom Modality Badges Inside Card -->
+    <g transform="translate(145, 155)">
+      <rect x="0" y="0" width="100" height="26" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-opacity="0.4"/>
+      <text x="50" y="17" fill="#bae6fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" text-anchor="middle">🎨 Image APIs</text>
+
+      <rect x="112" y="0" width="100" height="26" rx="6" fill="#1e293b" stroke="#f472b6" stroke-opacity="0.4"/>
+      <text x="162" y="17" fill="#fbcfe8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" text-anchor="middle">🎬 Video APIs</text>
+
+      <rect x="224" y="0" width="100" height="26" rx="6" fill="#1e293b" stroke="#818cf8" stroke-opacity="0.4"/>
+      <text x="274" y="17" fill="#c7d2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" text-anchor="middle">🎙️ Audio / TTS</text>
+
+      <rect x="336" y="0" width="100" height="26" rx="6" fill="#1e293b" stroke="#34d399" stroke-opacity="0.4"/>
+      <text x="386" y="17" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" text-anchor="middle">⚡ Multi-Modal</text>
+
+      <rect x="448" y="0" width="100" height="26" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-opacity="0.4"/>
+      <text x="498" y="17" fill="#fde68a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" text-anchor="middle">🛡️ Provenance</text>
+    </g>
+  </g>
+</svg>
